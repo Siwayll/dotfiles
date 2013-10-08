@@ -12,7 +12,12 @@ Bundle 'gmarik/vundle'
 "
 " github repos
 Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-surround'
 Bundle 'ervandew/supertab'
+Bundle 'lilydjwg/colorizer'
+
+
 
 filetype on
 
@@ -22,13 +27,13 @@ set t_Co=256
 if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
             \ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
     runtime! plugin/guicolorscheme.vim
-    "GuiColorScheme hybrid
-    GuiColorScheme desert
+    GuiColorScheme hybrid
+    "GuiColorScheme desert
     "GuiColorScheme superman
     "GuiColorScheme Muon
 else
-    "colorscheme nucolors
-    colorscheme desert
+    colorscheme nucolors
+    "colorscheme getfresh 
     "colorscheme Muon
 endif
 
@@ -158,8 +163,8 @@ let g:ConqueTerm_CloseOnEnd = 0
 nmap <silent> <leader>s :set nolist!<CR>
 
 " Automatically toggle between relative and absolute numbers
-autocmd! InsertEnter * set number
-autocmd! InsertLeave * set relativenumber
+"autocmd! InsertEnter * set number
+"autocmd! InsertLeave * set relativenumber
 
 " autorun files
 set autowrite
