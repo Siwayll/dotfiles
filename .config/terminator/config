@@ -1,0 +1,52 @@
+[global_config]
+  title_hide_sizetext = True
+  always_split_with_profile = True
+  focus = mouse
+  title_transmit_fg_color = "#151515"
+  enabled_plugins = TerminalShot, LaunchpadCodeURLHandler, LaunchpadBugURLHandler
+  title_transmit_bg_color = "#ff8939"
+  tab_position = bottom
+  title_inactive_bg_color = "#515151"
+[keybindings]
+[profiles]
+  [[default]]
+    scrollbar_position = hidden
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#aac209:#cc9b00:#2a9beb:#6c71c4:#32bfb5:#fdf6e3"
+    background_image = None
+    background_darkness = 0.95
+    scrollback_lines = 5000
+    cursor_shape = underline
+    use_system_font = False
+    cursor_color = "#f45514"
+    foreground_color = "#ffffff"
+    font = Mensch 10
+    background_color = "#151515"
+  [[Nouveau profil]]
+    scrollbar_position = hidden
+    palette = "#000000:#cd0000:#00cd00:#cdcd00:#0000cd:#cd00cd:#00cdcd:#faebd7:#404040:#ff0000:#00ff00:#ffff00:#0000ff:#ff00ff:#00ffff:#ffffff"
+    background_image = None
+  [[nuColors]]
+    palette = "#393939:#ff9f95:#e2ffc7:#ffffb9:#a8ceea:#e2b5cc:#c2efff:#dddddd:#474747:#ff8d80:#dbffb3:#ffbe64:#7eb6ff:#e296ff:#9ce9ff:#dddddd"
+    background_color = "#151515"
+    scrollbar_position = hidden
+    foreground_color = "#c7c7c7"
+  [[X]]
+    scrollbar_position = hidden
+    palette = "#101010:#e84f4f:#b8d68c:#e1aa5d:#7dc1cf:#9b64fb:#6d878d:#dddddd:#404040:#d23d3d:#a0cf5d:#f39d21:#4e9fb1:#8542ff:#42717b:#dddddd"
+    scrollback_lines = 5000
+    cursor_shape = underline
+    use_system_font = False
+    cursor_color = "#ff8939"
+    foreground_color = "#d7d0c7"
+    font = Mensch 10
+    background_color = "#151515"
+    audible_bell = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
