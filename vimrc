@@ -18,7 +18,6 @@ Bundle 'ervandew/supertab'
 Bundle 'lilydjwg/colorizer'
 
 
-
 filetype on
 
 set t_Co=256
@@ -125,14 +124,12 @@ let g:tex_flavor="pdflatex"
 
 let g:GPGUseAgent=0
 let g:GPGPrefArmor=1
-let g:GPGDefaultRecipients=["Albert Chang <albert.chang@gmx.com>"]
+" let g:GPGDefaultRecipients=["t.chang@gmx.com>"]
 
 " NERDTree
 map <F2> :silent NERDTreeToggle<CR>
 " Toggle relative/absolute numbers
-"map <F3> :call NumberToggle()<CR>
-" Hypergit
-"map <F4> :silent ToggleGitMenu<CR>
+map <F3> :call NumberToggle()<CR>
 
 set pastetoggle=<leader>p
 
@@ -218,8 +215,10 @@ endfunction
 
 function! NumberToggle()
     if(&relativenumber == 1)
+        let &relativenumber = 0
         set number
     else
+        let &relativenumber = 1
         set relativenumber
     endif
 endfunction
