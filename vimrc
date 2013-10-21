@@ -1,5 +1,11 @@
 "set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
+" Thème pour gvim
+let p_color="nucolors"
+" Thème pour la version console
+let p_consCo="hybrid"
+
+
 " utilisation de Bundle
 filetype off
 set rtp+=~/.vim/bundle/vundle/
@@ -8,14 +14,24 @@ call vundle#rc()
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
-" Vundles
-"
-" github repos
+" ## Vundles
+" Navigateur de fichiers
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-haml'
+" raccourcis pour gérer les " et '
 Bundle 'tpope/vim-surround'
 Bundle 'ervandew/supertab'
+" affichages des couleurs dans leur couleur
 Bundle 'lilydjwg/colorizer'
+" Navigateur entre les déclarations
+"Bundle 'vim-scripts/taglist.vim'
+Bundle 'majutsushi/tagbar'
+" Barre de status
+"Bundle 'maciakl/vim-neatstatus'
+Bundle 'bling/vim-airline'
+" Contrôle de la syntaxe
+Bundle 'scrooloose/syntastic'
+
 
 
 filetype on
@@ -26,14 +42,9 @@ set t_Co=256
 if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
             \ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
     runtime! plugin/guicolorscheme.vim
-    GuiColorScheme hybrid
-    "GuiColorScheme desert
-    "GuiColorScheme superman
-    "GuiColorScheme Muon
+    execute "colorscheme ".p_consCo
 else
-    colorscheme nucolors
-    "colorscheme getfresh 
-    "colorscheme Muon
+    execute "colorscheme ".p_color
 endif
 
 let g:hybrid_use_Xresources = 1
@@ -65,6 +76,9 @@ set mouse=r " Let the mouse work in the console
 set showmatch
 set ruler " Always show cursor
 set cursorline
+
+" Affichage en permanence de la statusline
+set laststatus=2
 
 " display current mode and partially typed commands
 set showmode
@@ -106,7 +120,6 @@ highlight Pmenu ctermbg=238 gui=bold
 
 " textwidth limits
 autocmd BufRead /tmp/mutt-* set tw=72 " mutt limit to 72 characters
-"autocmd BufRead *.txt set tw=78 " text files limit to 78 characters
 
 " vertical line at 80th column
 "highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
@@ -122,14 +135,42 @@ let g:mapleader=","
 let g:tex_flavor="pdflatex"
 "let g:tex_flavor="latex"
 
-let g:GPGUseAgent=0
-let g:GPGPrefArmor=1
-" let g:GPGDefaultRecipients=["t.chang@gmx.com>"]
+
+" ## Raccourcis
 
 " NERDTree
 map <F2> :silent NERDTreeToggle<CR>
 " Toggle relative/absolute numbers
 map <F3> :call NumberToggle()<CR>
+" Navigator
+nmap <F8> :TagbarToggle<CR>
+
+""" FocusMode
+function! ToggleWritMode()
+  if (&laststatus == 2)
+    colorscheme iawriter
+    set number!
+    set linebreak
+    set laststatus=0
+    set noruler
+  else
+    set number
+    set linebreak!
+    set ruler
+    set laststatus=2
+    execute "colorscheme ".g:p_color
+  endif
+endfunc
+nnoremap <F10> :call ToggleWritMode()<cr>
+
+
+" ## StatusLine
+let g:airline_powerline_fonts=0
+let g:airline_left_sep = '_'
+let g:airline_right_sep = '_'
+
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline_theme="jellybeans"
 
 set pastetoggle=<leader>p
 
@@ -167,24 +208,27 @@ nmap <silent> <leader>s :set nolist!<CR>
 set autowrite
 command! -buffer W make
 
+au BufNewFile,BufRead *.md set filetype=markdown
+
 " indentation & write + load
-autocmd! FileType ruby set shiftwidth=2 softtabstop=2 tabstop=2 makeprg=ruby\ %
-autocmd! FileType python set shiftwidth=4 softtabstop=4 tabstop=4 makeprg=python\ %
-autocmd! FileType perl set shiftwidth=4 softtabstop=4 tabstop=4 makeprg=perl\ %
-autocmd! FileType java set shiftwidth=4 softtabstop=4 tabstop=4 makeprg=javac\ %
-autocmd! FileType lua set shiftwidth=4 softtabstop=4 tabstop=4 makeprg=lua\ %
-autocmd! FileType tex set shiftwidth=4 softtabstop=4 tabstop=4 makeprg=pdflatex\ %
-autocmd! FileType c,cpp set shiftwidth=4 softtabstop=4 tabstop=4 makeprg=make
-autocmd! FileType sh set shiftwidth=2 softtabstop=2 tabstop=2 makeprg=./%
-autocmd! BufNewFile,BufRead PKGBUILD set shiftwidth=2 softtabstop=2 tabstop=2 makeprg=makepkg
+autocmd! FileType ruby set spell! shiftwidth=2 softtabstop=2 tabstop=2 makeprg=ruby\ %
+autocmd! FileType python set spell! shiftwidth=4 softtabstop=4 tabstop=4 makeprg=python\ %
+autocmd! FileType perl set spell! shiftwidth=4 softtabstop=4 tabstop=4 makeprg=perl\ %
+autocmd! FileType java set spell! shiftwidth=4 softtabstop=4 tabstop=4 makeprg=javac\ %
+autocmd! FileType lua set spell! shiftwidth=4 softtabstop=4 tabstop=4 makeprg=lua\ %
+autocmd! FileType tex set spell! shiftwidth=4 softtabstop=4 tabstop=4 makeprg=pdflatex\ %
+autocmd! FileType c,cpp set spell! shiftwidth=4 softtabstop=4 tabstop=4 makeprg=make
+autocmd! FileType sh set spell! shiftwidth=2 softtabstop=2 tabstop=2 makeprg=./%
+autocmd! BufNewFile,BufRead PKGBUILD set spell! shiftwidth=2 softtabstop=2 tabstop=2 makeprg=makepkg
+autocmd! FileType markdown set colorcolumn=0 spelllang=fr spell
 
 " indentation only
 " no indentation
-autocmd! FileType asciidoc set nocindent noautoindent
+autocmd! FileType asciidoc set spell! nocindent noautoindent
 " 4-space explicit
-autocmd! FileType javascript,arduino,php,html,xhtml,css,xml set shiftwidth=4 softtabstop=4 tabstop=4
+autocmd! FileType arduino,php,html,xhtml,css,xml set spell! shiftwidth=4 softtabstop=4 tabstop=4
 " 2-space
-autocmd! FileType vhdl set shiftwidth=2 softtabstop=2 tabstop=2
+autocmd! FileType vhdl,javascript set spell! shiftwidth=2 softtabstop=2 tabstop=2
 " 8-space
 
 " auto-chmod
@@ -213,6 +257,8 @@ function! LoadTemplate()
     syn match Todo "%\u\+%" containedIn=ALL
 endfunction
 
+
+" Switch entre numérotation relative et absolue
 function! NumberToggle()
     if(&relativenumber == 1)
         let &relativenumber = 0
@@ -222,3 +268,6 @@ function! NumberToggle()
         set relativenumber
     endif
 endfunction
+
+
+
