@@ -153,11 +153,14 @@ function! ToggleWritMode()
     set linebreak
     set laststatus=0
     set noruler
+    set spelllang=fr
+    set spell
   else
     set number
     set linebreak!
     set ruler
     set laststatus=2
+    set spell!
     execute "colorscheme ".g:p_color
   endif
 endfunc
@@ -220,7 +223,7 @@ autocmd! FileType tex set spell! shiftwidth=4 softtabstop=4 tabstop=4 makeprg=pd
 autocmd! FileType c,cpp set spell! shiftwidth=4 softtabstop=4 tabstop=4 makeprg=make
 autocmd! FileType sh set spell! shiftwidth=2 softtabstop=2 tabstop=2 makeprg=./%
 autocmd! BufNewFile,BufRead PKGBUILD set spell! shiftwidth=2 softtabstop=2 tabstop=2 makeprg=makepkg
-autocmd! FileType markdown set colorcolumn=0 spelllang=fr spell
+autocmd! FileType markdown set colorcolumn=0
 
 " indentation only
 " no indentation
