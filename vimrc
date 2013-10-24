@@ -118,6 +118,10 @@ set incsearch
 
 highlight Pmenu ctermbg=238 gui=bold
 
+" Affichage des espaces en fin de ligne et des tabulations
+set listchars=tab:→\ ,trail:·
+set list
+
 " textwidth limits
 autocmd BufRead /tmp/mutt-* set tw=72 " mutt limit to 72 characters
 
@@ -155,6 +159,7 @@ function! ToggleWritMode()
     set noruler
     set spelllang=fr
     set spell
+    syn on
   else
     set number
     set linebreak!
@@ -162,6 +167,7 @@ function! ToggleWritMode()
     set laststatus=2
     set spell!
     execute "colorscheme ".g:p_color
+    syn on
   endif
 endfunc
 nnoremap <F10> :call ToggleWritMode()<cr>
