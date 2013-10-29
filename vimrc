@@ -80,6 +80,11 @@ set cursorline
 " Affichage en permanence de la statusline
 set laststatus=2
 
+" Suppression de ce putain de bip
+set noeb vb t_vb=
+au GUIEnter * set vb t_vb=
+
+
 " display current mode and partially typed commands
 set showmode
 set showcmd
