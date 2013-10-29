@@ -240,9 +240,9 @@ autocmd! FileType markdown set colorcolumn=0
 " no indentation
 autocmd! FileType asciidoc set spell! nocindent noautoindent
 " 4-space explicit
-autocmd! FileType arduino,php,html,xhtml,css,xml set spell! shiftwidth=4 softtabstop=4 tabstop=4
+autocmd! FileType arduino,php,html,xhtml,xml set spell! shiftwidth=4 softtabstop=4 tabstop=4
 " 2-space
-autocmd! FileType vhdl,javascript set spell! shiftwidth=2 softtabstop=2 tabstop=2
+autocmd! FileType vhdl,javascript,scss,css set spell! shiftwidth=2 softtabstop=2 tabstop=2
 " 8-space
 
 " auto-chmod
