@@ -69,5 +69,9 @@ export PATH="/home/adrien/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 rgc() {
-    git commit -m"`curl -s http://whatthecommit.com/index.txt`"
+  git commit -m"`curl -s http://whatthecommit.com/index.txt`"
 }
+function mcd() {
+  mkdir -p "$1" && cd "$1";
+}
+
