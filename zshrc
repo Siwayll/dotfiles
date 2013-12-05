@@ -10,7 +10,8 @@ ZSH_THEME="robbyrussell"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias mnt="/home/adrien/bin/mnt.sh"
+alias j="jump"
+alias ix="~/bin/ix"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
