@@ -157,7 +157,7 @@ nmap <F8> :TagbarToggle<CR>
 """ FocusMode
 function! ToggleWritMode()
   if (&laststatus == 2)
-    colorscheme iawriter
+    colorscheme summerfruit256
     set number!
     set linebreak
     set laststatus=0
