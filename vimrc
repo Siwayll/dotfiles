@@ -154,6 +154,9 @@ map <F3> :call NumberToggle()<CR>
 " Navigator
 nmap <F8> :TagbarToggle<CR>
 
+map j gj
+map k gk
+
 """ FocusMode
 function! ToggleWritMode()
   if (&laststatus == 2)
