@@ -1,0 +1,14 @@
+[alias]
+	st = status -bs
+	last = log -1 HEAD
+	unstage = reset HEAD --
+	lop = log --graph --all --oneline --decorate
+	co = checkout
+	br = branch
+	ci = commit
+	lol = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short
+	permission-reset = !git diff -p -R | grep -E \"^(diff|(old|new) mode)\" | git apply\n\n
+	permission-reset = !git diff -p -R | grep -E \"^(diff|(old|new) mode)\" | git apply
+	d = diff
+	dc = diff --cached
+	setup-hooks = "!cd \"`git rev-parse --git-dir`/hooks\" && ln -fs $HOOKSDIR/commit-msg && ln -fs $HOOKSDIR/pre-commit; cd -"
