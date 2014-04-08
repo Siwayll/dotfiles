@@ -162,7 +162,7 @@ function! ToggleWritMode()
   if (&laststatus == 2)
     colorscheme summerfruit256
     set number!
-    set linebreak
+    set wrap linebreak nolist
     set laststatus=0
     set noruler
     set spelllang=fr
@@ -243,9 +243,9 @@ autocmd! FileType markdown set colorcolumn=0
 " no indentation
 autocmd! FileType asciidoc set spell! nocindent noautoindent
 " 4-space explicit
-autocmd! FileType arduino,php,html,xhtml,xml set spell! shiftwidth=4 softtabstop=4 tabstop=4
+autocmd! FileType arduino,php,xhtml,xml set spell! shiftwidth=4 softtabstop=4 tabstop=4
 " 2-space
-autocmd! FileType vhdl,javascript,scss,css set spell! shiftwidth=2 softtabstop=2 tabstop=2
+autocmd! FileType vhdl,javascript,scss,css,html set spell! shiftwidth=2 softtabstop=2 tabstop=2
 " 8-space
 
 " auto-chmod
