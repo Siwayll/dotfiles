@@ -33,7 +33,6 @@ Bundle 'bling/vim-airline'
 Bundle 'scrooloose/syntastic'
 
 
-
 filetype on
 
 set t_Co=256
@@ -46,6 +45,17 @@ if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
 else
     execute "colorscheme ".p_color
 endif
+
+" Vim Gnome 
+
+" Suppression des barres de scroll
+set guioptions-=r
+set guioptions-=L
+
+" Suppression du menu
+set guioptions-=m
+
+set guioptions+=c
 
 let g:hybrid_use_Xresources = 1
 
@@ -163,19 +173,19 @@ function! ToggleWritMode()
     colorscheme summerfruit256
     set number!
     set wrap linebreak nolist
-    set laststatus=0
     set noruler
     set spelllang=fr
     set spell
     syn on
+    AirlineToggleWhitespace
   else
     set number
     set linebreak!
     set ruler
-    set laststatus=2
     set spell!
     execute "colorscheme ".g:p_color
     syn on
+    AirlineToggleWhitespace
   endif
 endfunc
 nnoremap <F10> :call ToggleWritMode()<cr>
@@ -183,10 +193,13 @@ nnoremap <F10> :call ToggleWritMode()<cr>
 
 " ## StatusLine
 let g:airline_powerline_fonts=0
-let g:airline_left_sep = '_'
-let g:airline_right_sep = '_'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+let g:airline_detect_modified = 1
+let g:airline_detect_paste = 1
 
-let g:airline#extensions#tagbar#enabled = 1
+
+" let g:airline#extensions#tagbar#enabled = 1
 let g:airline_theme="jellybeans"
 
 set pastetoggle=<leader>p
