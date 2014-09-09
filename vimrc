@@ -258,7 +258,7 @@ autocmd! FileType asciidoc set spell! nocindent noautoindent
 " 4-space explicit
 autocmd! FileType arduino,php,xhtml,xml set spell! shiftwidth=4 softtabstop=4 tabstop=4
 " 2-space
-autocmd! FileType vhdl,javascript,scss,css,html set spell! shiftwidth=2 softtabstop=2 tabstop=2
+autocmd! FileType vhdl,javascript,scss,css,html,yaml set nospell shiftwidth=2 softtabstop=2 tabstop=2
 " 8-space
 
 " auto-chmod
