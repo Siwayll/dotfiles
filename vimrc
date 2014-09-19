@@ -31,7 +31,8 @@ Bundle 'majutsushi/tagbar'
 Bundle 'bling/vim-airline'
 " Contrôle de la syntaxe
 Bundle 'scrooloose/syntastic'
-
+" Coloration synthaxique pour coffeeScript
+Bundle 'kchmck/vim-coffee-script'
 
 filetype on
 
