@@ -8,33 +8,35 @@ let p_consCo="hybrid"
 
 " utilisation de Bundle
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " ## Vundles
 " Navigateur de fichiers
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-haml'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-haml'
 " raccourcis pour gérer les " et '
-Bundle 'tpope/vim-surround'
-Bundle 'ervandew/supertab'
+Plugin 'tpope/vim-surround'
+Plugin 'ervandew/supertab'
 " affichages des couleurs dans leur couleur
-Bundle 'lilydjwg/colorizer'
+Plugin 'lilydjwg/colorizer'
 " Navigateur entre les déclarations
-"Bundle 'vim-scripts/taglist.vim'
-Bundle 'majutsushi/tagbar'
+"Plugin 'vim-scripts/taglist.vim'
+Plugin 'majutsushi/tagbar'
 " Barre de status
-"Bundle 'maciakl/vim-neatstatus'
-Bundle 'bling/vim-airline'
+"Plugin 'maciakl/vim-neatstatus'
+Plugin 'bling/vim-airline'
 " Contrôle de la syntaxe
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 " Coloration synthaxique pour coffeeScript
-Bundle 'kchmck/vim-coffee-script'
+Plugin 'kchmck/vim-coffee-script'
 
-filetype on
+call vundle#end()
+filetype plugin indent on
+
 
 set t_Co=256
 " colorscheme xoria256
