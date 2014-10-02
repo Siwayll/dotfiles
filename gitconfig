@@ -12,3 +12,8 @@
 	d = diff
 	dc = diff --cached
 	setup-hooks = "!cd \"`git rev-parse --git-dir`/hooks\" && ln -fs $HOOKSDIR/commit-msg && ln -fs $HOOKSDIR/pre-commit; cd -"
+	dl = diff --name-only
+[core]
+	editor = vim
+[push]
+	default = simple
