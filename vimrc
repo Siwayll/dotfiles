@@ -33,6 +33,12 @@ Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
 " Coloration synthaxique pour coffeeScript
 Plugin 'kchmck/vim-coffee-script'
+" Coloration synthacique pour stylus
+Plugin 'wavded/vim-stylus'
+" Plugin emmet coding
+Plugin 'mattn/emmet-vim'
+
+
 
 call vundle#end()
 filetype plugin indent on
@@ -259,10 +265,16 @@ autocmd! FileType markdown set colorcolumn=0
 " no indentation
 autocmd! FileType asciidoc set spell! nocindent noautoindent
 " 4-space explicit
-autocmd! FileType arduino,php,xhtml,xml set spell! shiftwidth=4 softtabstop=4 tabstop=4
+autocmd! FileType arduino,php,xml set spell! shiftwidth=4 softtabstop=4 tabstop=4
 " 2-space
-autocmd! FileType vhdl,javascript,scss,css,html,yaml set nospell shiftwidth=2 softtabstop=2 tabstop=2
+autocmd! FileType vhdl,javascript,scss,css,html,xhtml,yaml,stylus set nospell shiftwidth=2 softtabstop=2 tabstop=2
 " 8-space
+
+" emmet coding configuration
+let g:user_emmet_install_global = 0
+autocmd FileType html EmmetInstall
+
+
 
 " auto-chmod
 autocmd BufWritePost * call NoExtNewFile()
