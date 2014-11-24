@@ -38,7 +38,9 @@ Plugin 'wavded/vim-stylus'
 " Plugin emmet coding
 Plugin 'mattn/emmet-vim'
 
-
+" DistractionFree
+" http://vimawesome.com/plugin/goyo-vim
+Plugin 'junegunn/goyo.vim'
 
 call vundle#end()
 filetype plugin indent on
