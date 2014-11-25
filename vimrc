@@ -6,45 +6,46 @@ let p_color="nucolors"
 let p_consCo="hybrid"
 
 
-" utilisation de Bundle
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" utilisation de vim plug
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle
-Plugin 'gmarik/vundle'
-
-" ## Vundles
 " Navigateur de fichiers
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-haml'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " raccourcis pour gérer les " et '
-Plugin 'tpope/vim-surround'
-Plugin 'ervandew/supertab'
+Plug 'tpope/vim-surround'
+Plug 'ervandew/supertab'
 " affichages des couleurs dans leur couleur
-Plugin 'lilydjwg/colorizer'
+Plug 'lilydjwg/colorizer'
 " Navigateur entre les déclarations
-"Plugin 'vim-scripts/taglist.vim'
-Plugin 'majutsushi/tagbar'
+"Plug 'vim-scripts/taglist.vim'
+Plug 'majutsushi/tagbar'
 " Barre de status
-"Plugin 'maciakl/vim-neatstatus'
-Plugin 'bling/vim-airline'
+"Plug 'maciakl/vim-neatstatus'
+Plug 'bling/vim-airline'
 " Contrôle de la syntaxe
-Plugin 'scrooloose/syntastic'
-" Coloration synthaxique pour coffeeScript
-Plugin 'kchmck/vim-coffee-script'
-" Coloration synthacique pour stylus
-Plugin 'wavded/vim-stylus'
+Plug 'scrooloose/syntastic'
 " Plugin emmet coding
-Plugin 'mattn/emmet-vim'
-
+" http://vimawesome.com/plugin/emmet-vim
+Plug 'mattn/emmet-vim'
 " DistractionFree
 " http://vimawesome.com/plugin/goyo-vim
-Plugin 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim'
 
-call vundle#end()
-filetype plugin indent on
 
+" Language haml sass scss
+Plug 'tpope/vim-haml'
+" Coloration synthaxique pour coffeeScript
+Plug 'kchmck/vim-coffee-script'
+" Coloration synthaxique pour stylus
+Plug 'wavded/vim-stylus'
+
+" Snippets
+" http://vimawesome.com/plugin/ultisnips-forever-and-always
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+
+call plug#end()
 
 set t_Co=256
 " colorscheme xoria256
@@ -276,6 +277,12 @@ autocmd! FileType vhdl,javascript,scss,css,html,xhtml,yaml,stylus set nospell sh
 let g:user_emmet_install_global = 0
 autocmd FileType html EmmetInstall
 
+
+" Ultisnips configuration
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
 
 
 " auto-chmod
