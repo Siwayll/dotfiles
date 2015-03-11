@@ -67,6 +67,9 @@ set guioptions-=L
 " Suppression du menu
 set guioptions-=m
 
+" Suppression des icones
+set go-=T
+
 set guioptions+=c
 
 let g:hybrid_use_Xresources = 1
@@ -276,6 +279,7 @@ autocmd! FileType vhdl,javascript,scss,css,html,xhtml,yaml,stylus set nospell sh
 " emmet coding configuration
 let g:user_emmet_install_global = 0
 autocmd FileType html EmmetInstall
+autocmd FileType php EmmetInstall
 
 
 " Ultisnips configuration
