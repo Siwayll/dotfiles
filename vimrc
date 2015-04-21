@@ -31,6 +31,8 @@ Plug 'mattn/emmet-vim'
 " http://vimawesome.com/plugin/goyo-vim
 Plug 'junegunn/goyo.vim'
 
+" Plugin d'interface avec git
+"Plug 'tpope/vim-fugitive'
 
 " Language haml sass scss
 Plug 'tpope/vim-haml'
@@ -59,6 +61,10 @@ else
 endif
 
 " Vim Gnome 
+
+if has('gui_running')
+    set lines=60 columns=100
+endif
 
 " Suppression des barres de scroll
 set guioptions-=r
