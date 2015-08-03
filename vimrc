@@ -46,6 +46,8 @@ Plug 'wavded/vim-stylus'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
+Plug 'koron/minimap-vim'
+
 
 call plug#end()
 
@@ -64,6 +66,8 @@ endif
 
 if has('gui_running')
     set lines=60 columns=100
+    set guifont=Source\ Code\ Pro\ 11
+    set linespace=-4
 endif
 
 " Suppression des barres de scroll
