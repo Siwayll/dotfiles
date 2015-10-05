@@ -1,7 +1,7 @@
 "set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
 " Thème pour gvim
-let p_color="nucolors"
+let p_color="gruvbox"
 " Thème pour la version console
 let p_consCo="hybrid"
 
@@ -34,6 +34,9 @@ Plug 'junegunn/goyo.vim'
 " Plugin d'interface avec git
 "Plug 'tpope/vim-fugitive'
 
+" Thème
+Plug 'morhetz/gruvbox'
+
 " Language haml sass scss
 Plug 'tpope/vim-haml'
 " Coloration synthaxique pour coffeeScript
@@ -60,14 +63,14 @@ if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
     execute "colorscheme ".p_consCo
 else
     execute "colorscheme ".p_color
+    set background=dark
 endif
 
 " Vim Gnome 
 
 if has('gui_running')
     set lines=60 columns=100
-    set guifont=Source\ Code\ Pro\ 11
-    set linespace=-4
+    set guifont=FiraMono\ Regular\ 13
 endif
 
 " Suppression des barres de scroll
