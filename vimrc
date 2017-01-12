@@ -43,11 +43,13 @@ Plug 'tpope/vim-haml'
 Plug 'kchmck/vim-coffee-script'
 " Coloration synthaxique pour stylus
 Plug 'wavded/vim-stylus'
+" Coloration synthaxique pour twig
+Plug 'evidens/vim-twig'
 
 " Snippets
 " http://vimawesome.com/plugin/ultisnips-forever-and-always
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+"Plug 'SirVer/ultisnips'
+"Plug 'honza/vim-snippets'
 
 Plug 'koron/minimap-vim'
 
@@ -64,13 +66,15 @@ if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
 else
     execute "colorscheme ".p_color
     set background=dark
+    let g:gruvbox_italicize_comments=0
 endif
 
 " Vim Gnome 
 
 if has('gui_running')
     set lines=60 columns=100
-    set guifont=FiraMono\ Regular\ 13
+    set guifont=FiraMono\ For\ Powerline\ Regular\ 13
+    set linespace=-4
 endif
 
 " Suppression des barres de scroll
@@ -220,15 +224,15 @@ nnoremap <F10> :call ToggleWritMode()<cr>
 
 
 " ## StatusLine
-let g:airline_powerline_fonts=0
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀'
+let g:airline_powerline_fonts=1
+"let g:airline_left_sep = '▶'
+"let g:airline_right_sep = '◀'
 let g:airline_detect_modified = 1
 let g:airline_detect_paste = 1
 
 
 " let g:airline#extensions#tagbar#enabled = 1
-let g:airline_theme="jellybeans"
+" let g:airline_theme="jellybeans"
 
 set pastetoggle=<leader>p
 
