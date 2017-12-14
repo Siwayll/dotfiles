@@ -33,6 +33,9 @@ Plug 'mattn/emmet-vim'
 " DistractionFree
 " http://vimawesome.com/plugin/goyo-vim
 Plug 'junegunn/goyo.vim'
+" Focus sur le paragraphe courant
+" https://vimawesome.com/plugin/limelight-vim
+Plug 'junegunn/limelight.vim'
 
 " Plugin d'interface avec git
 "Plug 'tpope/vim-fugitive'
@@ -202,30 +205,6 @@ nmap <F8> :TagbarToggle<CR>
 map j gj
 map k gk
 
-""" FocusMode
-function! ToggleWritMode()
-  if (&laststatus == 2)
-    colorscheme summerfruit256
-    set number!
-    set wrap linebreak nolist
-    set noruler
-    set spelllang=fr
-    set spell
-    syn on
-    AirlineToggleWhitespace
-  else
-    set number
-    set linebreak!
-    set ruler
-    set spell!
-    execute "colorscheme ".g:p_color
-    syn on
-    AirlineToggleWhitespace
-  endif
-endfunc
-nnoremap <F10> :call ToggleWritMode()<cr>
-
-
 " ## StatusLine
 let g:airline_powerline_fonts=1
 "let g:airline_left_sep = '▶'
@@ -347,5 +326,29 @@ function! NumberToggle()
     endif
 endfunction
 
+" Limelight
+let g:limelight_conceal_ctermfg = 240
+
+" Goyo
+function! s:goyo_enter()
+    silent !tmux set status off
+    set lbr
+    Limelight
+    set noshowmode
+    set noshowcmd
+    set scrolloff=999
+endfunction
+
+function! s:goyo_leave()
+    silent !tmux set status on
+    set nolbr
+    set showmode
+    set showcmd
+    Limelight!
+    set scrolloff=5
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 
