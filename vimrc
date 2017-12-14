@@ -1,5 +1,7 @@
 "set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
+set encoding=utf-8
+
 " Thème pour gvim
 let p_color="gruvbox"
 " Thème pour la version console
