@@ -234,12 +234,6 @@ autocmd! BufNewFile,BufRead *.pde,*.ino setlocal ft=arduino
 "let g:miniBufExplorerMoreThanOne=0
 "let g:miniBufExplMapWindowNavVim = 1
 
-let g:ConqueTerm_PyVersion = 3
-let g:ConqueTerm_FastMode = 0
-let g:ConqueTerm_ReadUnfocused = 1
-let g:ConqueTerm_InsertOnEnter = 0
-let g:ConqueTerm_CloseOnEnd = 0
-
 " omnicompletion
 "set omnifunc=syntaxcomplete#Complete
 "set completeopt=menuone,menu,longest,preview
