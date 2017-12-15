@@ -36,6 +36,10 @@ Plug 'junegunn/goyo.vim'
 " https://vimawesome.com/plugin/limelight-vim
 Plug 'junegunn/limelight.vim'
 
+" Amélioration des commentaires
+" https://vimawesome.com/plugin/the-nerd-commenter
+Plug 'scrooloose/nerdcommenter'
+
 " Plugin d'interface avec git
 "Plug 'tpope/vim-fugitive'
 
