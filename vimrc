@@ -64,7 +64,9 @@ Plug 'posva/vim-vue'
 "Plug 'SirVer/ultisnips'
 "Plug 'honza/vim-snippets'
 
-Plug 'koron/minimap-vim'
+" Minimap
+" https://vimawesome.com/plugin/vim-minimap
+Plug 'severin-lemaignan/vim-minimap'
 
 
 call plug#end()
