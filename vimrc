@@ -9,7 +9,6 @@ let p_consCo="hybrid"
 
 
 " utilisation de vim plug
-" https://github.com/junegunn/vim-plug#installation
 call plug#begin('~/.vim/plugged')
 
 " Navigateur de fichiers
