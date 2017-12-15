@@ -71,18 +71,13 @@ Plug 'severin-lemaignan/vim-minimap'
 
 call plug#end()
 
-set t_Co=256
-" colorscheme xoria256
-" Some themes are only for gvim, not vim
-if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
-            \ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
-    runtime! plugin/guicolorscheme.vim
-    execute "colorscheme ".p_consCo
-else
-    execute "colorscheme ".p_color
-    set background=dark
-    let g:gruvbox_italicize_comments=0
-endif
+" Paramétrage du theme gruvbox
+"let g:gruvbox_italic=1
+set background=dark
+let g:gruvbox_contrast_dark='medium'
+let g:gruvbox_italicize_comments=0
+
+colorscheme gruvbox
 
 " Vim Gnome 
 
