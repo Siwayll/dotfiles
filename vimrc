@@ -49,11 +49,15 @@ Plug 'morhetz/gruvbox'
 " Language haml sass scss
 Plug 'tpope/vim-haml'
 " Coloration synthaxique pour coffeeScript
-Plug 'kchmck/vim-coffee-script'
+"Plug 'kchmck/vim-coffee-script'
 " Coloration synthaxique pour stylus
-Plug 'wavded/vim-stylus'
+"Plug 'wavded/vim-stylus'
 " Coloration synthaxique pour twig
-Plug 'evidens/vim-twig'
+"Plug 'evidens/vim-twig'
+" Coloration synthaxique pour les composants vuejs
+" https://vimawesome.com/plugin/vim-vue-fearless
+Plug 'posva/vim-vue'
+
 
 " Snippets
 " http://vimawesome.com/plugin/ultisnips-forever-and-always
@@ -271,11 +275,11 @@ autocmd! FileType markdown set colorcolumn=0
 
 " indentation only
 " no indentation
-autocmd! FileType asciidoc set spell! nocindent noautoindent
+autocmd! FileType asciidoc set nospell nocindent noautoindent
 " 4-space explicit
-autocmd! FileType arduino,php,xml set spell! shiftwidth=4 softtabstop=4 tabstop=4
+autocmd! FileType arduino,php,xml set nospell shiftwidth=4 softtabstop=4 tabstop=4
 " 2-space
-autocmd! FileType vhdl,javascript,scss,css,html,xhtml,yaml,stylus set nospell shiftwidth=2 softtabstop=2 tabstop=2
+autocmd! FileType vhdl,javascript,scss,css,html,xhtml,yaml,stylus,vue set nospell shiftwidth=2 softtabstop=2 tabstop=2
 " 8-space
 
 " emmet coding configuration
