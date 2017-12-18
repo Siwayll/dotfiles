@@ -46,17 +46,20 @@ Plug 'scrooloose/nerdcommenter'
 " Thème
 Plug 'morhetz/gruvbox'
 
+" _____       _                 _   _
+" /  __ \     | |               | | (_)
+" | /  \/ ___ | | ___  _ __ __ _| |_ _  ___  _ __
+" | |    / _ \| |/ _ \| '__/ _` | __| |/ _ \| '_ \
+" | \__/\ (_) | | (_) | | | (_| | |_| | (_) | | | |
+"  \____/\___/|_|\___/|_|  \__,_|\__|_|\___/|_| |_|
+"
 " Language haml sass scss
 Plug 'tpope/vim-haml'
-" Coloration synthaxique pour coffeeScript
-"Plug 'kchmck/vim-coffee-script'
-" Coloration synthaxique pour stylus
-"Plug 'wavded/vim-stylus'
-" Coloration synthaxique pour twig
-"Plug 'evidens/vim-twig'
-" Coloration synthaxique pour les composants vuejs
-" https://vimawesome.com/plugin/vim-vue-fearless
-Plug 'posva/vim-vue'
+"Plug 'kchmck/vim-coffee-script' " CoffeScript
+"Plug 'wavded/vim-stylus' " Stylus
+"Plug 'evidens/vim-twig' " twig
+Plug 'kylef/apiblueprint.vim' " API blueprint
+Plug 'posva/vim-vue' " VueJs https://vimawesome.com/plugin/vim-vue-fearless
 
 
 " Snippets
