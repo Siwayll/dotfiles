@@ -1,3 +1,0 @@
-#!/bin/bash
-
-urxvt -fn "xft:Source\ Code\ Pro\ Medium:pixelsize=13:antialias=true:hinting=true" -xrm "*color0:  #39474A" -xrm "*color1:  #986345" -xrm "*color2:  #788249" -xrm "*color3:  #9B6A46" -xrm "*color4:  #3E5951" -xrm "*color5:  #B9924A" -xrm "*color6:  #5d796a" -xrm "*color7:  #977D5E" -xrm "*color8:  #4C5F63" -xrm "*color9:  #B07350" -xrm "*color10: #869151" -xrm "*color11: #AF6B42" -xrm "*color12: #567A6E" -xrm "*color13: #D69D55" -xrm "*color14: #668574" -xrm "*color15: #AB9C71" -bg "#1D2426" -fg "#AB9C71" -cr "#BE5E1E"  -geometry "140x35" -e "weechat"
