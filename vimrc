@@ -176,6 +176,9 @@ set cindent
 set smartindent
 set autoindent
 
+" folding manual
+set foldmethod=manual
+
 set hlsearch
 set incsearch
 
