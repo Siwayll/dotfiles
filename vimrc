@@ -35,6 +35,9 @@ Plug 'junegunn/goyo.vim'
 " Focus sur le paragraphe courant
 " https://vimawesome.com/plugin/limelight-vim
 Plug 'junegunn/limelight.vim'
+" delte buffer without close windows
+" https://vimawesome.com/plugin/vim-bbye
+Plug 'gwww/vim-bbye'
 
 " Amélioration des commentaires
 " https://vimawesome.com/plugin/the-nerd-commenter
