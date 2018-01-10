@@ -1,34 +1,36 @@
-"set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
-
 set encoding=utf-8
 
-" Thème pour gvim
-let p_color="gruvbox"
-" Thème pour la version console
-let p_consCo="hybrid"
-
-
 " utilisation de vim plug
+" https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
 
 " Navigateur de fichiers
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " raccourcis pour gérer les " et '
 Plug 'tpope/vim-surround'
+" Autocomplétion via tab
 Plug 'ervandew/supertab'
 " affichages des couleurs dans leur couleur
 Plug 'lilydjwg/colorizer'
+
 " Navigateur entre les déclarations
 "Plug 'vim-scripts/taglist.vim'
+" http://vimawesome.com/plugin/tagbar
 Plug 'majutsushi/tagbar'
+
 " Barre de status
 "Plug 'maciakl/vim-neatstatus'
-Plug 'bling/vim-airline'
-" Contrôle de la syntaxe
+"Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
+
+" Contrôle de la syntaxe des langages de programmation
+" http://vimawesome.com/plugin/syntastic
 Plug 'scrooloose/syntastic'
+
 " Plugin emmet coding
 " http://vimawesome.com/plugin/emmet-vim
 Plug 'mattn/emmet-vim'
+
 " DistractionFree
 " http://vimawesome.com/plugin/goyo-vim
 Plug 'junegunn/goyo.vim'
@@ -48,6 +50,7 @@ Plug 'scrooloose/nerdcommenter'
 
 " Thème
 Plug 'morhetz/gruvbox'
+Plug 'dylanaraps/wal.vim'
 
 " _____       _                 _   _
 " /  __ \     | |               | | (_)
@@ -63,6 +66,7 @@ Plug 'tpope/vim-haml'
 "Plug 'evidens/vim-twig' " twig
 Plug 'kylef/apiblueprint.vim' " API blueprint
 Plug 'posva/vim-vue' " VueJs https://vimawesome.com/plugin/vim-vue-fearless
+Plug 'http://git.doublepsi.fr/gen3se/ver8e.vim.git' " Ver8e
 
 
 " Snippets
@@ -84,40 +88,16 @@ let g:gruvbox_contrast_dark='medium'
 let g:gruvbox_italicize_comments=0
 
 colorscheme gruvbox
-
-" Vim Gnome 
-
-if has('gui_running')
-    set lines=60 columns=100
-    set guifont=FiraMono\ For\ Powerline\ Regular\ 13
-    set linespace=-4
-endif
-
-" Suppression des barres de scroll
-set guioptions-=r
-set guioptions-=L
-
-" Suppression du menu
-set guioptions-=m
-
-" Suppression des icones
-set go-=T
-
-set guioptions+=c
-
-let g:hybrid_use_Xresources = 1
+"colorscheme wal
 
 set history=1000
-
 set autochdir
 
 syntax on " Enable syntax highlighting
 filetype plugin indent on " Enable filetype detection, plugins, and indentation
 
-nnoremap " `
-nnoremap ` '
 set hidden " allow hidden buffers
-runtime macros/matchit.vim
+
 set wildmenu
 set wildmode=list:longest,full
 
@@ -128,20 +108,18 @@ set nowritebackup
 set noswapfile
 
 set nocompatible
-set number
-"set relativenumber " Show the line number
+
+set number " numérotation des lignes
 set mouse=r " Let the mouse work in the console
 set showmatch
 set ruler " Always show cursor
-set cursorline
+set cursorline " Met en surbrillance la ligne courante
 
 " Affichage en permanence de la statusline
 set laststatus=2
 
 " Suppression de ce putain de bip
 set noeb vb t_vb=
-au GUIEnter * set vb t_vb=
-
 
 " display current mode and partially typed commands
 set showmode
@@ -195,17 +173,6 @@ autocmd BufRead /tmp/mutt-* set tw=72 " mutt limit to 72 characters
 "highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 set colorcolumn=80
 
-" java-specific
-let java_highlight_all=1
-let java_highlight_functions="style"
-let java_allow_cpp_keywords=1
-
-let mapleader=","
-let g:mapleader=","
-let g:tex_flavor="pdflatex"
-"let g:tex_flavor="latex"
-
-
 " ## Raccourcis
 
 " NERDTree
@@ -218,18 +185,6 @@ nmap <F8> :TagbarToggle<CR>
 map j gj
 map k gk
 
-" ## StatusLine
-let g:airline#extensions#tabline#enabled = 1
-"let g:airline_powerline_fonts=1
-"let g:airline_left_sep = '▶'
-"let g:airline_right_sep = '◀'
-"let g:airline_detect_modified = 1
-"let g:airline_detect_paste = 1
-
-
-" let g:airline#extensions#tagbar#enabled = 1
-" let g:airline_theme="jellybeans"
-
 set pastetoggle=<leader>p
 
 set confirm
@@ -237,24 +192,7 @@ set confirm
 " when ~/.vimrc is changed, autoload
 autocmd! BufWritePost .vimrc source %
 
-" arduino syntax highlighting
-autocmd! BufNewFile,BufRead *.pde,*.ino setlocal ft=arduino
-
-"autocmd! BufNew,BufRead :call UMiniBufExplorer
-"let g:miniBufExplorerMoreThanOne=0
-"let g:miniBufExplMapWindowNavVim = 1
-
-" omnicompletion
-"set omnifunc=syntaxcomplete#Complete
-"set completeopt=menuone,menu,longest,preview
-"let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
-
-"set listchars=tab:>-,trail:·,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
-
-" Automatically toggle between relative and absolute numbers
-"autocmd! InsertEnter * set number
-"autocmd! InsertLeave * set relativenumber
 
 " autorun files
 set autowrite
@@ -288,14 +226,6 @@ let g:user_emmet_install_global = 0
 autocmd FileType html EmmetInstall
 autocmd FileType php EmmetInstall
 
-
-" Ultisnips configuration
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
-
-
 " auto-chmod
 autocmd BufWritePost * call NoExtNewFile()
 
@@ -307,8 +237,6 @@ function! NoExtNewFile()
         silent !chmod a+x <afile>
     endif
 endfunction
-
-" http://stackoverflow.com/questions/4016649/vim-word-completion-navigating-with-j-and-k#4016817
 
 " use templates
 autocmd! BufNewFile * call LoadTemplate()
