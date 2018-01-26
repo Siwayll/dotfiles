@@ -51,6 +51,7 @@ Plug 'scrooloose/nerdcommenter'
 " Thème
 Plug 'morhetz/gruvbox'
 Plug 'dylanaraps/wal.vim'
+Plug 'challenger-deep-theme/vim'
 
 " _____       _                 _   _
 " /  __ \     | |               | | (_)
@@ -74,11 +75,6 @@ Plug 'http://git.doublepsi.fr/gen3se/ver8e.vim.git' " Ver8e
 "Plug 'SirVer/ultisnips'
 "Plug 'honza/vim-snippets'
 
-" Minimap
-" https://vimawesome.com/plugin/vim-minimap
-Plug 'severin-lemaignan/vim-minimap'
-
-
 call plug#end()
 
 " Paramétrage du theme gruvbox
@@ -96,6 +92,17 @@ set autochdir
 syntax on " Enable syntax highlighting
 filetype plugin indent on " Enable filetype detection, plugins, and indentation
 
+let g:lightline = {
+    \ 'colorscheme': 'gruvbox',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ] ],
+    \   'right': [ [ 'lineinfo' ], [ 'percent' ] ]
+    \ },
+\ }
+
+set laststatus=2 " Affichage en permanence de la statusline
+set noshowmode
+
 set hidden " allow hidden buffers
 
 set wildmenu
@@ -106,45 +113,27 @@ set directory=~/.local/share/vim
 set nobackup
 set nowritebackup
 set noswapfile
-
 set nocompatible
-
 set number " numérotation des lignes
 set mouse=r " Let the mouse work in the console
 set showmatch
 set ruler " Always show cursor
 set cursorline " Met en surbrillance la ligne courante
-
-" Affichage en permanence de la statusline
-set laststatus=2
-
-" Suppression de ce putain de bip
-set noeb vb t_vb=
-
-" display current mode and partially typed commands
-set showmode
+set noeb vb t_vb= " Suppression de ce putain de bip
 set showcmd
-
 " case-insensitive searches, unless caps are involved
 set ignorecase
 set smartcase
-
 set foldmethod=indent
 set foldlevel=99
-
 set shortmess=atI
-
 set autoread
-
 set equalalways
-
 set magic
 set so=7
-
 set clipboard=unnamed
 
 " tabs -> spaces
-" default 4-space dd
 set expandtab
 set shiftwidth=4
 set softtabstop=4
@@ -160,30 +149,31 @@ set foldmethod=manual
 set hlsearch
 set incsearch
 
-highlight Pmenu ctermbg=238 gui=bold
-
 " Affichage des espaces en fin de ligne et des tabulations
 set listchars=tab:→\ ,trail:·
 set list
 
-" textwidth limits
-autocmd BufRead /tmp/mutt-* set tw=72 " mutt limit to 72 characters
-
-" vertical line at 80th column
-"highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 set colorcolumn=80
 
-" ## Raccourcis
+" ## Mapping !
 
 " NERDTree
 map <F2> :silent NERDTreeToggle<CR>
 " Toggle relative/absolute numbers
 map <F3> :call NumberToggle()<CR>
-" Navigator
-nmap <F8> :TagbarToggle<CR>
+map <F8> :TagbarToggle<CR>
 
 map j gj
 map k gk
+
+let mapleader = "&"
+imap <leader>; <Esc>$a;
+imap <leader>: <Esc>$a:
+imap <leader>. <Esc>$a.
+imap <leader>) <Esc>$a)
+imap <leader>$ $this->
+imap <leader>f function
+
 
 set pastetoggle=<leader>p
 
@@ -192,25 +182,11 @@ set confirm
 " when ~/.vimrc is changed, autoload
 autocmd! BufWritePost .vimrc source %
 
-nmap <silent> <leader>s :set nolist!<CR>
-
 " autorun files
 set autowrite
 command! -buffer W make
 
 au BufNewFile,BufRead *.md set filetype=markdown
-
-" indentation & write + load
-autocmd! FileType ruby set spell! shiftwidth=2 softtabstop=2 tabstop=2 makeprg=ruby\ %
-autocmd! FileType python set spell! shiftwidth=4 softtabstop=4 tabstop=4 makeprg=python\ %
-autocmd! FileType perl set spell! shiftwidth=4 softtabstop=4 tabstop=4 makeprg=perl\ %
-autocmd! FileType java set spell! shiftwidth=4 softtabstop=4 tabstop=4 makeprg=javac\ %
-autocmd! FileType lua set spell! shiftwidth=4 softtabstop=4 tabstop=4 makeprg=lua\ %
-autocmd! FileType tex set spell! shiftwidth=4 softtabstop=4 tabstop=4 makeprg=pdflatex\ %
-autocmd! FileType c,cpp set spell! shiftwidth=4 softtabstop=4 tabstop=4 makeprg=make
-autocmd! FileType sh set spell! shiftwidth=2 softtabstop=2 tabstop=2 makeprg=./%
-autocmd! BufNewFile,BufRead PKGBUILD set spell! shiftwidth=2 softtabstop=2 tabstop=2 makeprg=makepkg
-autocmd! FileType markdown set colorcolumn=0
 
 " indentation only
 " no indentation
@@ -225,31 +201,6 @@ autocmd! FileType vhdl,javascript,scss,css,html,xhtml,yaml,stylus,vue set nospel
 let g:user_emmet_install_global = 0
 autocmd FileType html EmmetInstall
 autocmd FileType php EmmetInstall
-
-" auto-chmod
-autocmd BufWritePost * call NoExtNewFile()
-
-function! NoExtNewFile()
-    if getline(1) =~ "^#!.*/bin/"
-        if &filetype == ""
-            filetype detect
-        endif
-        silent !chmod a+x <afile>
-    endif
-endfunction
-
-" use templates
-autocmd! BufNewFile * call LoadTemplate()
-" jump between %VAR% placeholders in Insert mode with <Ctrl-p>
-inoremap <C-p> <ESC>/%\u.\{-1,}%<cr>c/%/e<cr>
-
-function! LoadTemplate()
-    silent! 0r ~/.vim/skel/tmpl.%:e
-
-    " Highlight %VAR% placeholders with the Todo color group
-    syn match Todo "%\u\+%" containedIn=ALL
-endfunction
-
 
 " Switch entre numérotation relative et absolue
 function! NumberToggle()
@@ -273,6 +224,7 @@ function! s:goyo_enter()
     set noshowmode
     set noshowcmd
     set scrolloff=999
+    set cursorline!
 endfunction
 
 function! s:goyo_leave()
@@ -282,6 +234,7 @@ function! s:goyo_leave()
     set showcmd
     Limelight!
     set scrolloff=5
+    set cursorline
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
