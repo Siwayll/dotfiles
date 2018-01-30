@@ -146,7 +146,7 @@ set smartindent
 set autoindent
 
 " folding manual
-set foldmethod=manual
+set foldmethod=indent
 
 set hlsearch
 set incsearch
