@@ -48,6 +48,8 @@ Plug 'scrooloose/nerdcommenter'
 " Plugin d'interface avec git
 "Plug 'tpope/vim-fugitive'
 
+Plug 'godlygeek/tabular' " https://vimawesome.com/plugin/tabular
+
 " Thème
 Plug 'morhetz/gruvbox'
 Plug 'dylanaraps/wal.vim'
@@ -95,8 +97,8 @@ filetype plugin indent on " Enable filetype detection, plugins, and indentation
 let g:lightline = {
     \ 'colorscheme': 'gruvbox',
     \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ] ],
-    \   'right': [ [ 'lineinfo' ], [ 'percent' ] ]
+    \   'left'  : [ [ 'mode', 'paste' ] ],
+    \   'right' : [ [ 'lineinfo' ], [ 'percent' ] ]
     \ },
 \ }
 
@@ -174,6 +176,10 @@ imap <leader>) <Esc>$a)
 imap <leader>$ $this->
 imap <leader>f function
 
+if exists(":Tabularize")
+    vmap <leader>t= :Tabularize /=<CR>
+    vmap <leader>t: :Tabularize /:\zs<CR>
+endif
 
 set pastetoggle=<leader>p
 
