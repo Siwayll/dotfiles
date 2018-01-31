@@ -172,7 +172,9 @@ let mapleader = "&"
 imap <leader>; <Esc>$a;
 imap <leader>: <Esc>$a:
 imap <leader>. <Esc>$a.
+imap <leader>, <Esc>$a,
 imap <leader>) <Esc>$a)
+imap <leader>- <Esc>$a->
 imap <leader>$ $this->
 imap <leader>f function
 
