@@ -178,6 +178,11 @@ imap <leader>- <Esc>$a->
 imap <leader>$ $this->
 imap <leader>f function
 
+if has('nvim')
+    " remap sortie du terminal par <Esc>
+    tnoremap <Esc> <C-\><C-n>
+endif
+
 if exists(":Tabularize")
     vmap <leader>t= :Tabularize /=<CR>
     vmap <leader>t: :Tabularize /:\zs<CR>
