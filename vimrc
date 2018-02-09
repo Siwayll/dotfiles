@@ -50,6 +50,11 @@ Plug 'scrooloose/nerdcommenter'
 
 Plug 'godlygeek/tabular' " https://vimawesome.com/plugin/tabular
 
+Plug 'jceb/vim-orgmode' " https://vimawesome.com/plugin/vim-orgmode
+Plug 'tpope/vim-speeddating' " https://vimawesome.com/plugin/speeddating-vim
+Plug 'mattn/calendar-vim'
+
+
 " Thème
 Plug 'morhetz/gruvbox'
 Plug 'dylanaraps/wal.vim'
@@ -78,6 +83,10 @@ Plug 'http://git.doublepsi.fr/gen3se/ver8e.vim.git' " Ver8e
 "Plug 'honza/vim-snippets'
 
 call plug#end()
+
+
+" orgMod configuration
+let maplocalleader = "="
 
 " Paramétrage du theme gruvbox
 "let g:gruvbox_italic=1
