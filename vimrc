@@ -50,9 +50,9 @@ Plug 'scrooloose/nerdcommenter'
 
 Plug 'godlygeek/tabular' " https://vimawesome.com/plugin/tabular
 
-Plug 'jceb/vim-orgmode' " https://vimawesome.com/plugin/vim-orgmode
-Plug 'tpope/vim-speeddating' " https://vimawesome.com/plugin/speeddating-vim
-Plug 'mattn/calendar-vim'
+Plug 'jceb/vim-orgmode', {'for':'org'} " https://vimawesome.com/plugin/vim-orgmode
+Plug 'tpope/vim-speeddating', {'for':'org'} " https://vimawesome.com/plugin/speeddating-vim
+Plug 'mattn/calendar-vim', {'for':'org'}
 
 
 " Thème
