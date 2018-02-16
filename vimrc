@@ -87,6 +87,12 @@ call plug#end()
 
 " orgMod configuration
 let maplocalleader = "="
+let g:org_todo_keywords = [
+            \ ['TODO(t)', '|', 'DONE(d)'],
+            \ ['REPORT(r)', 'BUG(b)', 'KNOWNCAUSE(k)', '|', 'FIXED(f)'],
+            \ ['CANCELED(c)'],
+            \ ['ASK(a)', '|', 'SENDED(s)', 'ANSWERED']
+            \]
 
 " Paramétrage du theme gruvbox
 "let g:gruvbox_italic=1
