@@ -13,11 +13,6 @@ Plug 'ervandew/supertab'
 " affichages des couleurs dans leur couleur
 Plug 'lilydjwg/colorizer'
 
-" Navigateur entre les déclarations
-"Plug 'vim-scripts/taglist.vim'
-" http://vimawesome.com/plugin/tagbar
-Plug 'majutsushi/tagbar'
-
 " Barre de status
 "Plug 'maciakl/vim-neatstatus'
 "Plug 'vim-airline/vim-airline'
