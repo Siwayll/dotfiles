@@ -1,22 +1,25 @@
 [alias]
+    # shortcut
 	st = status -bs
-	last = log -1 HEAD
-	unstage = reset HEAD --
-	lop = log --graph --all --oneline --decorate
 	co = checkout
 	br = branch
 	ci = commit
-	lol = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short
-	permission-reset = !git diff -p -R | grep -E \"^(diff|(old|new) mode)\" | git apply\n\n
-	permission-reset = !git diff -p -R | grep -E \"^(diff|(old|new) mode)\" | git apply
 	d = diff
+	p = push
+	a = add
+    # manipulation
+	unstage = reset HEAD --
+	pa = push --all
+	maj = pull --ff-only
+	fa = fetch -pft
+	ua = !git fa && git maj
+    # view
+	last = log -1 HEAD
+	lop = log --graph --all --oneline --decorate
+	lol = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short
 	dc = diff --cached
-	setup-hooks = "!cd \"`git rev-parse --git-dir`/hooks\" && ln -fs $HOOKSDIR/commit-msg && ln -fs $HOOKSDIR/pre-commit; cd -"
 	dl = diff --name-only
-    p = push
-    pa = push --all
-    maj = pûll --ff-only
 [core]
 	editor = vim
-[push]
-	default = simple
+	excludesfile = ~/.config/git/ignore
+	fileMode = false
