@@ -7,6 +7,10 @@
 
 #define fg    #c0a79a
 #define bg    [97]#312e39
+
+#define colorUl #4682B4
+#define crsr    #ff1844
+
 #define blk   #33303b
 #define bblk  #4f4b58
 #define red   #87404f
