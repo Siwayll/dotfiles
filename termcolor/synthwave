@@ -1,0 +1,26 @@
+! vim: set filetype=xdefaults :
+! /----------------------------------\
+! | synthwave                        |
+! | originally based on dkegs urban  |
+! | https://fsociety.info 2016       |
+! \----------------------------------/
+
+#define fg    #c0a79a
+#define bg    [97]#312e39
+#define blk   #33303b
+#define bblk  #4f4b58
+#define red   #87404f
+#define rred  #87404f
+#define grn   #4c9882
+#define ggrn  #4c9882
+#define ylw   #71949a
+#define yylw  #71949a
+#define blu   #615772
+#define bblu  #615772
+#define mag   #783e57
+#define mmag  #783e57
+#define cyn   #554757
+#define ccyn  #554757
+#define wht   #c0a79a
+#define wwht  #c0a79a
+
