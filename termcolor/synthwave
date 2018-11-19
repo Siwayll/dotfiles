@@ -9,7 +9,7 @@
 #define bg    [97]#312e39
 
 #define colorUl #4682B4
-#define crsr    #ff1844
+#define crsr    #6cf5fc
 
 #define blk   #33303b
 #define bblk  #4f4b58
