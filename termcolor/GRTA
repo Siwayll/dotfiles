@@ -1,0 +1,30 @@
+! vim: set filetype=xdefaults :
+! /----------------------------------\
+! | G R T A                          |
+! |                                  |
+! |  http://dotshare.it/dots/8327/   |
+! \----------------------------------/
+
+#define fg    #a2a9af
+#define bg    [97]#1a2937
+
+#define colorUl #4682B4
+#define crsr    #6cf5fc
+
+#define blk   #2e404e
+#define bblk  #3d4e5b
+#define red   #537592
+#define rred  #657e94
+#define grn   #dbc36e
+#define ggrn  #c8be96
+#define ylw   #e6b179
+#define yylw  #ccac8a
+#define blu   #98b2a7
+#define bblu  #a1b5b4
+#define mag   #c17b82
+#define mmag  #a9808a
+#define cyn   #bcbd82
+#define ccyn  #b5bb9d
+#define wht   #dcc8a1
+#define wwht  #cfc6af
+
