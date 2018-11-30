@@ -1,0 +1,30 @@
+! vim: set filetype=xdefaults :
+! /------------------------------------------\
+! | Challenger Deep                          |
+! |                                          |
+! | https://challenger-deep-theme.github.io/ |
+! \------------------------------------------/
+
+#define fg    #cbe3e7
+#define bg    [97]#1b182c
+
+#define colorUl #4682B4
+#define crsr    #fbfcfc
+
+#define blk   #565575
+#define bblk  #100e23
+#define red   #ff8080
+#define rred  #ff5458
+#define grn   #95ffa4
+#define ggrn  #62d196
+#define ylw   #ffe9aa
+#define yylw  #ffb378
+#define blu   #91ddff
+#define bblu  #65b2ff
+#define mag   #c991e1
+#define mmag  #906cff
+#define cyn   #aaffe4
+#define ccyn  #63f2f1
+#define wht   #cbe3e7
+#define wwht  #a6b3cc
+
