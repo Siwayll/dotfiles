@@ -14,8 +14,6 @@ Plug 'ervandew/supertab'
 Plug 'lilydjwg/colorizer'
 
 " Barre de status
-"Plug 'maciakl/vim-neatstatus'
-"Plug 'vim-airline/vim-airline'
 Plug 'itchyny/lightline.vim'
 
 " Contrôle de la syntaxe des langages de programmation
@@ -51,9 +49,8 @@ Plug 'mattn/calendar-vim', {'for':'org'}
 
 
 " Thème
-Plug 'morhetz/gruvbox'
-Plug 'dylanaraps/wal.vim'
-Plug 'challenger-deep-theme/vim'
+"Plug 'morhetz/gruvbox'
+Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 
 "  _____       _                 _   _
 " /  __ \     | |               | | (_)
@@ -91,12 +88,11 @@ let g:org_todo_keywords = [
 
 " Paramétrage du theme gruvbox
 "let g:gruvbox_italic=1
-set background=dark
-let g:gruvbox_contrast_dark='medium'
-let g:gruvbox_italicize_comments=0
+"set background=dark
+"let g:gruvbox_contrast_dark='medium'
+"let g:gruvbox_italicize_comments=0
 
-colorscheme gruvbox
-"colorscheme wal
+colorscheme challenger_deep
 
 set history=1000
 set autochdir
@@ -105,7 +101,7 @@ syntax on " Enable syntax highlighting
 filetype plugin indent on " Enable filetype detection, plugins, and indentation
 
 let g:lightline = {
-    \ 'colorscheme': 'gruvbox',
+    \ 'colorscheme': 'challenger_deep',
     \ 'active': {
     \   'left'  : [ [ 'mode', 'paste' ] ],
     \   'right' : [ [ 'lineinfo' ], [ 'percent' ] ]
