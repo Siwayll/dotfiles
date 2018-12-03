@@ -49,8 +49,8 @@ Plug 'mattn/calendar-vim', {'for':'org'}
 
 
 " Thème
-"Plug 'morhetz/gruvbox'
-Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+Plug 'morhetz/gruvbox'
+"Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 
 "  _____       _                 _   _
 " /  __ \     | |               | | (_)
@@ -88,11 +88,11 @@ let g:org_todo_keywords = [
 
 " Paramétrage du theme gruvbox
 "let g:gruvbox_italic=1
-"set background=dark
-"let g:gruvbox_contrast_dark='medium'
-"let g:gruvbox_italicize_comments=0
+set background=dark
+let g:gruvbox_contrast_dark='medium'
+let g:gruvbox_italicize_comments=0
 
-colorscheme challenger_deep
+colorscheme gruvbox
 
 set history=1000
 set autochdir
@@ -101,12 +101,14 @@ syntax on " Enable syntax highlighting
 filetype plugin indent on " Enable filetype detection, plugins, and indentation
 
 let g:lightline = {
-    \ 'colorscheme': 'challenger_deep',
+    \ 'colorscheme': 'gruvbox',
     \ 'active': {
     \   'left'  : [ [ 'mode', 'paste' ] ],
     \   'right' : [ [ 'lineinfo' ], [ 'percent' ] ]
     \ },
 \ }
+
+hi Normal ctermbg=none
 
 set laststatus=2 " Affichage en permanence de la statusline
 set noshowmode
