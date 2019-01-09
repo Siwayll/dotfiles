@@ -68,11 +68,14 @@ Plug 'kylef/apiblueprint.vim' " API blueprint
 Plug 'posva/vim-vue' " VueJs https://vimawesome.com/plugin/vim-vue-fearless
 Plug 'http://git.doublepsi.fr/gen3se/ver8e.vim.git' " Ver8e
 
+Plug 'bgrohman/vim-bg-tables'
 
 " Snippets
 " http://vimawesome.com/plugin/ultisnips-forever-and-always
 "Plug 'SirVer/ultisnips'
 "Plug 'honza/vim-snippets'
+
+
 
 call plug#end()
 
