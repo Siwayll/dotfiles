@@ -14,12 +14,19 @@
 	fa = fetch -pft
 	ua = !git fa && git maj
     # view
+    ## log
 	last = log -1 HEAD
 	lop = log --graph --all --oneline --decorate
 	lol = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short
+    pn = !git log --pretty='format: - %s' --no-merges $(git describe --abbrev=0 --tags)..HEAD
+    ## diff
 	dc = diff --cached
 	dl = diff --name-only
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = ~/.config/git/ignore
 	fileMode = false
+[gpg]
+	program = gpg2
+[commit]
+	gpgSign = true
