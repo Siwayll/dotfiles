@@ -94,6 +94,7 @@ bindsym $mod+a focus parent
 
 set $wsWeb "web"
 set $wsWork "work"
+set $wsData "data"
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -107,6 +108,7 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 bindsym $mod+n workspace $wsWork
+bindsym $mod+b workspace $wsData
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -120,10 +122,12 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+n move container to workspace $wsWork
+bindsym $mod+Shift+b move container to workspace $wsData
 
 # organize
 assign [class="(?i)firefox"] $wsWeb
 assign [class="(?i)jetbrains-phpstorm"] $wsWork
+assign [class="(?i)jetbrains-datagrip"] $wsData
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -206,6 +210,7 @@ for_window [class="(?i)nm-connection-editor"] floating enable, border pixel 1
 
 for_window [class="(?i)Firefox"] border pixel 1
 for_window [class="(?i)jetbrains-phpstorm"] border pixel 1
+for_window [class="(?i)jetbrains-datagrip"] border pixel 1
 for_window [class="(?i)Spotify"] border pixel 1
 for_window [class="(?i)TelegramDesktop"] floating enable, border pixel 1
 for_window [class="(?i)Oblogout"] floating enable, fullscreen
