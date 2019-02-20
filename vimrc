@@ -24,12 +24,6 @@ Plug 'scrooloose/syntastic'
 " http://vimawesome.com/plugin/emmet-vim
 Plug 'mattn/emmet-vim'
 
-" DistractionFree
-" http://vimawesome.com/plugin/goyo-vim
-Plug 'junegunn/goyo.vim'
-" Focus sur le paragraphe courant
-" https://vimawesome.com/plugin/limelight-vim
-Plug 'junegunn/limelight.vim'
 " delte buffer without close windows
 " https://vimawesome.com/plugin/vim-bbye
 Plug 'gwww/vim-bbye'
@@ -38,37 +32,55 @@ Plug 'gwww/vim-bbye'
 " https://vimawesome.com/plugin/the-nerd-commenter
 Plug 'scrooloose/nerdcommenter'
 
-" Plugin d'interface avec git
-"Plug 'tpope/vim-fugitive'
+"  _____ _______   ___
+" /  ___|_   _\ \ / / |
+" \ `--.  | |  \ V /| |
+"  `--. \ | |   \ / | |
+" /\__/ / | |   | | | |____
+" \____/  \_/   \_/ \_____/
 
+Plug 'morhetz/gruvbox'
+"Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+
+
+"  _       ___   _   _ _____
+" | |     / _ \ | \ | |  __ \
+" | |    / /_\ \|  \| | |  \/
+" | |    |  _  || . ` | | __
+" | |____| | | || |\  | |_\ \
+" \_____/\_| |_/\_| \_/\____/
+
+Plug 'tpope/vim-haml' " Language haml sass scss
+"Plug 'kchmck/vim-coffee-script' " CoffeScript
+"Plug 'wavded/vim-stylus' " Stylus
+"Plug 'evidens/vim-twig' " Twig
+"Plug 'kylef/apiblueprint.vim' " API blueprint
+Plug 'posva/vim-vue' " VueJs https://vimawesome.com/plugin/vim-vue-fearless
+Plug 'hashivim/vim-terraform' " Terraform
+Plug 'http://git.doublepsi.fr/gen3se/ver8e.vim.git' " Ver8e
+
+" _____ _____  _____ _
+" |_   _|  _  ||  _  | |
+"   | | | | | || | | | |
+"   | | | | | || | | | |
+"   | | \ \_/ /\ \_/ / |____
+"   \_/  \___/  \___/\_____/
+
+Plug 'bgrohman/vim-bg-tables'
 Plug 'godlygeek/tabular' " https://vimawesome.com/plugin/tabular
 
 Plug 'jceb/vim-orgmode', {'for':'org'} " https://vimawesome.com/plugin/vim-orgmode
 Plug 'tpope/vim-speeddating', {'for':'org'} " https://vimawesome.com/plugin/speeddating-vim
 Plug 'mattn/calendar-vim', {'for':'org'}
 
+" DistractionFree
+" http://vimawesome.com/plugin/goyo-vim
+Plug 'junegunn/goyo.vim'
+" Focus on current text
+" https://vimawesome.com/plugin/limelight-vim
+Plug 'junegunn/limelight.vim'
 
-" Thème
-Plug 'morhetz/gruvbox'
-"Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 
-"  _____       _                 _   _
-" /  __ \     | |               | | (_)
-" | /  \/ ___ | | ___  _ __ __ _| |_ _  ___  _ __
-" | |    / _ \| |/ _ \| '__/ _` | __| |/ _ \| '_ \
-" | \__/\ (_) | | (_) | | | (_| | |_| | (_) | | | |
-"  \____/\___/|_|\___/|_|  \__,_|\__|_|\___/|_| |_|
-"
-" Language haml sass scss
-Plug 'tpope/vim-haml'
-"Plug 'kchmck/vim-coffee-script' " CoffeScript
-"Plug 'wavded/vim-stylus' " Stylus
-"Plug 'evidens/vim-twig' " twig
-Plug 'kylef/apiblueprint.vim' " API blueprint
-Plug 'posva/vim-vue' " VueJs https://vimawesome.com/plugin/vim-vue-fearless
-Plug 'http://git.doublepsi.fr/gen3se/ver8e.vim.git' " Ver8e
-
-Plug 'bgrohman/vim-bg-tables'
 
 " Snippets
 " http://vimawesome.com/plugin/ultisnips-forever-and-always
@@ -158,6 +170,12 @@ set autoindent
 
 " folding manual
 set foldmethod=indent
+
+" terraform
+let g:terraform_fold_sections=1
+let g:terraform_align=1
+let g:terraform_remap_spacebar=1
+let g:terraform_fmt_on_save=1
 
 set hlsearch
 set incsearch
