@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+if [ -f ~/.tmux.windows ]
+then
+    grep $(print $(pwd):) ~/.tmux.windows | sed -r 's/^.+:(.+)$/\1/g' | xargs tmux rename-window
+fi
