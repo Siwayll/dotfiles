@@ -92,10 +92,10 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $wsWeb "web"
-set $wsWork "work"
-set $wsData "data"
-set $wsPublic "public"
+set $wsWeb    "web"
+set $wsWork   "wrk"
+set $wsData   "alt"
+set $wsPublic "tlk"
 
 # switch to workspace
 bindsym $mod+1 workspace 1
