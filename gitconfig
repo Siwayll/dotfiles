@@ -28,5 +28,9 @@
 	fileMode = false
 [gpg]
 	program = gpg2
-[commit]
-	gpgSign = true
+
+[includeIf "gitdir:~/projects/"]
+    path = ~/.config/git/author/m6
+
+[includeIf "gitdir:~/Perso/"]
+    path = ~/.config/git/author/perso
