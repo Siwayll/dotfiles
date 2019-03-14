@@ -17,7 +17,7 @@
     ## log
 	last = log -1 HEAD
 	lop = log --graph --all --oneline --decorate
-	lol = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short
+	lol = "log --pretty=format:'%C(#FBF1C7)%h %C(#BDAE93)%ad %C(#D65D0E)→%C(auto)% D %Creset%s' --date=human --graph --all"
     pn = !git log --pretty='format: - %s' --no-merges $(git describe --abbrev=0 --tags)..HEAD
     ## diff
 	dc = diff --cached
@@ -28,6 +28,20 @@
 	fileMode = false
 [gpg]
 	program = gpg2
+
+[color]
+	branch = true
+
+[color "branch"]
+	local = "#fbf1c7"
+	remote = "#fbf1c7"
+
+[color "decorate"]
+    head = "#6cf5fc"
+    branch = blue
+    remoteBranch = red
+	stash = green
+
 
 [includeIf "gitdir:~/projects/"]
     path = ~/.config/git/author/m6
