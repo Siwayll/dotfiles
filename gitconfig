@@ -37,10 +37,11 @@
 	remote = "#fbf1c7"
 
 [color "decorate"]
-    head = "#6cf5fc"
-    branch = blue
-    remoteBranch = red
+    head = "#b16286" bold
+    branch = green bold
+    remoteBranch = blue
 	stash = green
+    tag = yellow bold
 
 
 [includeIf "gitdir:~/projects/"]
