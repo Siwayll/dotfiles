@@ -270,4 +270,4 @@ exec --no-startup-id nm-applet
 exec --no-startup-id "nitrogen --restore"
 # exec --no-startup-id "sleep 2s && kalu"
 exec --no-startup-id "xset r rate 175 60"
-exec --no-startup-id "xcape -e 'Control_L=Escape;Shift_L=Home;Shift_R=End'"
+exec --no-startup-id "xcape -e 'Control_L=Escape'"
