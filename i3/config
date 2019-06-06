@@ -224,7 +224,7 @@ for_window [class="(?i)Gpicview"] floating enable, border pixel 1
 
 # Move between screen
 bindsym $mod+o move workspace to output right
-bindsym $mod+y move workspace to output left
+bindsym $mod+y move workspace to output up
 
 ## Multimedia Keys
 
