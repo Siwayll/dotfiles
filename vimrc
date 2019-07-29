@@ -88,6 +88,10 @@ Plug 'junegunn/limelight.vim'
 "Plug 'honza/vim-snippets'
 
 
+" icons
+" https://vimawesome.com/plugin/vim-devicons
+" MUST be the last called plugin
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
