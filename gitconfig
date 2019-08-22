@@ -2,6 +2,7 @@
     # shortcut
 	st = status -bs
 	co = checkout
+	sw = switch
 	br = branch
 	ci = commit
 	d = diff
