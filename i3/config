@@ -96,6 +96,7 @@ set $wsWeb    "web"
 set $wsWork   "wrk"
 set $wsData   "alt"
 set $wsPublic "tlk"
+set $wsMusic  "M"
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -107,7 +108,7 @@ bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+0 workspace $wsMusic
 bindsym $mod+n workspace $wsWork
 bindsym $mod+b workspace $wsData
 bindsym $mod+p workspace $wsPublic
@@ -122,7 +123,7 @@ bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+0 move container to workspace $wsMusic
 bindsym $mod+Shift+n move container to workspace $wsWork
 bindsym $mod+Shift+b move container to workspace $wsData
 bindsym $mod+Shift+p move container to workspace $wsPublic
@@ -132,6 +133,7 @@ assign [class="(?i)firefox"] $wsWeb
 assign [class="(?i)jetbrains-phpstorm"] $wsWork
 assign [class="(?i)jetbrains-datagrip"] $wsData
 assign [class="(?i)slack"] $wsPublic
+assign [class="(?i)spotify"] $wsMusic
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
