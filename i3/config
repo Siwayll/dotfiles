@@ -219,6 +219,7 @@ for_window [class="(?i)Firefox"] border pixel 1
 for_window [class="(?i)oni"] border pixel 1
 for_window [class="(?i)jetbrains-phpstorm"] border pixel 1
 for_window [class="(?i)jetbrains-datagrip"] border pixel 1
+for_window [class="(?i)jetbrains-idea"] border pixel 1
 for_window [class="(?i)Spotify"] border pixel 1
 for_window [class="(?i)slack"] border pixel 1
 for_window [class="(?i)TelegramDesktop"] floating enable, border pixel 1
