@@ -51,5 +51,4 @@
 
 [includeIf "gitdir:~/Perso/"]
     path = ~/.config/git/author/perso
-[credential]
-	helper = cache
+
