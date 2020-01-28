@@ -12,7 +12,7 @@
 	unstage = reset HEAD --
 	pa = push --all
 	maj = pull --ff-only
-	fa = fetch -pft
+	fa = fetch -pPft
 	ua = !git fa && git maj
     # view
     ## log
