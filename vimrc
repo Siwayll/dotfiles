@@ -8,8 +8,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " raccourcis pour gérer les " et '
 Plug 'tpope/vim-surround'
-" Autocomplétion via tab
-Plug 'ervandew/supertab'
 " affichages des couleurs dans leur couleur
 Plug 'lilydjwg/colorizer'
 
@@ -59,6 +57,21 @@ Plug 'posva/vim-vue' " VueJs https://vimawesome.com/plugin/vim-vue-fearless
 Plug 'hashivim/vim-terraform' " Terraform
 Plug 'http://git.doublepsi.fr/gen3se/ver8e.vim.git' " Ver8e
 
+" ______
+" |  _  \
+" | | | |_____   __
+" | | | / _ \ \ / /
+" | |/ /  __/\ V /
+" |___/ \___| \_/
+
+Plug 'shawncplus/phpcomplete.vim', {'for':'php'}
+" display ctags
+Plug 'majutsushi/tagbar' "https://vimawesome.com/plugin/tagbar
+" Autocomplétion via tab
+Plug 'ervandew/supertab'
+"Plug 'valloric/youcompleteme'
+
+
 " _____ _____  _____ _
 " |_   _|  _  ||  _  | |
 "   | | | | | || | | | |
@@ -72,6 +85,7 @@ Plug 'godlygeek/tabular' " https://vimawesome.com/plugin/tabular
 Plug 'jceb/vim-orgmode', {'for':'org'} " https://vimawesome.com/plugin/vim-orgmode
 Plug 'tpope/vim-speeddating', {'for':'org'} " https://vimawesome.com/plugin/speeddating-vim
 Plug 'mattn/calendar-vim', {'for':'org'}
+
 
 " DistractionFree
 " http://vimawesome.com/plugin/goyo-vim
@@ -111,6 +125,9 @@ set background=dark
 let g:gruvbox_contrast_dark='medium'
 let g:gruvbox_italicize_comments=0
 
+"let g:challenger_deep_termcolors=16
+"set termguicolors
+
 colorscheme gruvbox
 
 set history=1000
@@ -127,7 +144,8 @@ let g:lightline = {
     \ },
 \ }
 
-hi Normal ctermbg=none
+" disable background color
+hi Normal ctermbg=none guibg=none
 
 set laststatus=2 " Affichage en permanence de la statusline
 set noshowmode
@@ -196,7 +214,6 @@ set colorcolumn=80
 map <F2> :silent NERDTreeToggle<CR>
 " Toggle relative/absolute numbers
 map <F3> :call NumberToggle()<CR>
-map <F8> :TagbarToggle<CR>
 
 map j gj
 map k gk
@@ -220,6 +237,7 @@ endif
 if exists(":Tabularize")
     vmap <leader>t= :Tabularize /=<CR>
     vmap <leader>t: :Tabularize /:\zs<CR>
+    vmap <leader>t\ :Tabularize /\ \zs<CR>
 endif
 
 set pastetoggle=<leader>p
@@ -227,7 +245,7 @@ set pastetoggle=<leader>p
 set confirm
 
 " when ~/.vimrc is changed, autoload
-autocmd! BufWritePost .vimrc source %
+"autocmd! BufWritePost .vimrc source %
 
 " autorun files
 set autowrite
