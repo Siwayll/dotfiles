@@ -241,6 +241,7 @@ bindsym $mod+XF86AudioLowerVolume exec amixer -D pulse sset Master 1%- && pkill 
 
 # mute
 bindsym XF86AudioMute exec amixer sset Master toggle && killall -USR1 i3blocks
+bindsym XF86AudioRecord exec amixer sset Capture toggle
 
 #bindsym XF86AudioPlay exec playerctl play
 #bindsym XF86AudioPause exec playerctl pause
@@ -273,4 +274,4 @@ exec --no-startup-id nm-applet
 exec --no-startup-id "nitrogen --restore"
 # exec --no-startup-id "sleep 2s && kalu"
 exec --no-startup-id "xset r rate 175 60"
-exec --no-startup-id "xcape -e 'Control_L=Escape'"
+exec --no-startup-id "xcape -e 'Control_L=Escape;Control_R=XF86AudioRecord'"
