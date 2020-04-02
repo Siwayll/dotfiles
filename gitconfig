@@ -39,7 +39,7 @@
 	remote = "#fbf1c7"
 
 [color "decorate"]
-    head = "#b16286" bold
+    head = "#badf30" bold
     branch = green bold
     remoteBranch = blue
 	stash = green
