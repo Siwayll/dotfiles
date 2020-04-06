@@ -212,6 +212,7 @@ for_window [class="Kalu"] floating enable
 for_window [class="(?i)jetbrains-toolbox"] floating enable, border pixel 1
 for_window [class="(?i)nitrogen"] floating enable, border pixel 1
 for_window [class="(?i)arandr"] floating enable, border pixel 1
+for_window [class="(?i)blueman-manager"] floating enable, border pixel 1
 for_window [class="(?i)nm-connection-editor"] floating enable, border pixel 1
 
 for_window [class="(?i)urxvt"] border pixel 1
