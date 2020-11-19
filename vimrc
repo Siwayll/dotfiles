@@ -56,6 +56,7 @@ Plug 'tpope/vim-haml' " Language haml sass scss
 Plug 'posva/vim-vue' " VueJs https://vimawesome.com/plugin/vim-vue-fearless
 Plug 'hashivim/vim-terraform' " Terraform
 Plug 'http://git.doublepsi.fr/gen3se/ver8e.vim.git' " Ver8e
+Plug 'cespare/vim-toml' " toml
 
 " ______
 " |  _  \
