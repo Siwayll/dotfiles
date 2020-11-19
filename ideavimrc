@@ -6,7 +6,7 @@ imap <leader>. <Esc>$a.
 imap <leader>, <Esc>$a,
 imap <leader>) <Esc>$a)
 imap <leader>$ $this->
-imap <leader>- <Esc>$a->
+imap <leader>- ->
 imap <leader>f function
 imap <leader>' <Esc>$a {
 imap <leader>= <Esc>$a => 
