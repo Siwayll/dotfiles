@@ -35,6 +35,7 @@ window:
   #     - full: Borders and title bar
   #     - none: Neither borders nor title bar
   decorations: none
+  dynamic_title: true
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -155,7 +156,7 @@ colors:
 #   - Linear
 #
 # Specifying a `duration` of `0` will disable the visual bell.
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
 
@@ -217,7 +218,6 @@ selection:
   # clipboard.
   save_to_clipboard: true
 
-dynamic_title: true
 
 cursor:
   # Cursor style
