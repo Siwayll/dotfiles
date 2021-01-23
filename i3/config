@@ -209,13 +209,15 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
 # floating windows
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Kalu"] floating enable
-for_window [class="(?i)jetbrains-toolbox"] floating enable, border pixel 1
+for_window [class="(?i)jetbrains-toolbox"] border pixel 1
 for_window [class="(?i)nitrogen"] floating enable, border pixel 1
 for_window [class="(?i)arandr"] floating enable, border pixel 1
+for_window [class="(?i)Dunst"] floating enable, border pixel 1
 for_window [class="(?i)blueman-manager"] floating enable, border pixel 1
 for_window [class="(?i)nm-connection-editor"] floating enable, border pixel 1
 
 for_window [class="(?i)urxvt"] border pixel 1
+for_window [class="Image Lounge"] border pixel 1 # nomacs
 for_window [class="(?i)Firefox"] border pixel 1
 for_window [class="(?i)oni"] border pixel 1
 for_window [class="(?i)jetbrains-phpstorm"] border pixel 1
@@ -225,6 +227,7 @@ for_window [class="(?i)Spotify"] border pixel 1
 for_window [class="(?i)slack"] border pixel 1
 for_window [class="(?i)Oblogout"] floating enable, fullscreen
 for_window [class="(?i)Gpicview"] floating enable, border pixel 1
+for_window [class="(?i)Signal"] floating enable, border pixel 1
 
 # Move between screen
 bindsym $mod+o move workspace to output right
