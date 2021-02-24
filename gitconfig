@@ -47,7 +47,7 @@
 
 
 [includeIf "gitdir:~/projects/"]
-    path = ~/.config/git/author/m6
+    path = ~/.config/git/author/bedrock
 
 [includeIf "gitdir:~/Perso/"]
     path = ~/.config/git/author/perso
