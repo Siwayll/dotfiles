@@ -52,3 +52,11 @@
 [includeIf "gitdir:~/Perso/"]
     path = ~/.config/git/author/perso
 
+[includeIf "gitdir:~/chaussonnet/"]
+    path = ~/.config/git/author/perso
+
+[credential "https://github.com"]
+	helper = 
+	helper = ! auth git-credential
+[init]
+	defaultBranch = master

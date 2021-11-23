@@ -1,0 +1,25 @@
+#!/bin/bash
+
+if [[ ${#} -lt 1 ]]; then
+    echo >&2 "Level is missing"
+    exit 1;
+fi
+
+case $1 in
+    L*)
+        echo "green" > /home/adrien/tmp/busylight
+    ;;
+    NORM*)
+        echo "orange" > /home/adrien/tmp/busylight
+    ;;
+    CRIT*)
+        echo "red" > /home/adrien/tmp/busylight
+    ;;
+    A*)
+        echo "purple" > /home/adrien/tmp/busylight
+    ;;
+esac
+
+
+blinkstick --morph `cat /home/adrien/tmp/busylight`
+

@@ -56,7 +56,12 @@ Plug 'tpope/vim-haml' " Language haml sass scss
 Plug 'posva/vim-vue' " VueJs https://vimawesome.com/plugin/vim-vue-fearless
 Plug 'hashivim/vim-terraform' " Terraform
 Plug 'http://git.doublepsi.fr/gen3se/ver8e.vim.git' " Ver8e
+Plug '~/Perso/eno.vim' " eno
 Plug 'cespare/vim-toml' " toml
+
+
+Plug '~/Perso/suivis.vim' " suivis
+Plug 'jamessan/vim-gnupg'
 
 " ______
 " |  _  \
@@ -86,6 +91,8 @@ Plug 'godlygeek/tabular' " https://vimawesome.com/plugin/tabular
 Plug 'jceb/vim-orgmode', {'for':'org'} " https://vimawesome.com/plugin/vim-orgmode
 Plug 'tpope/vim-speeddating', {'for':'org'} " https://vimawesome.com/plugin/speeddating-vim
 Plug 'mattn/calendar-vim', {'for':'org'}
+
+Plug 'fmoralesc/vim-pad'
 
 
 " DistractionFree
@@ -207,7 +214,7 @@ set incsearch
 set listchars=tab:→\ ,trail:·
 set list
 
-set colorcolumn=80
+set colorcolumn=81
 
 " ## Mapping !
 
@@ -263,6 +270,8 @@ autocmd! FileType arduino,php,xml set nospell shiftwidth=4 softtabstop=4 tabstop
 " 2-space
 autocmd! FileType vhdl,javascript,scss,css,html,xhtml,yaml,stylus,vue set nospell shiftwidth=2 softtabstop=2 tabstop=2
 " 8-space
+
+autocmd User GnuPG setl textwidth=72
 
 " emmet coding configuration
 let g:user_emmet_install_global = 0

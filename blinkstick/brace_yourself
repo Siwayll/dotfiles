@@ -1,0 +1,16 @@
+#!/bin/bash
+blinkstick --morph --repeats 5 --pulse --duration=200 \#8F3F71
+blinkstick --morph `cat /home/adrien/tmp/busylight` --duration=100
+sleep 20s
+blinkstick --morph --repeats 2 --pulse --duration=800 \#8F3F71
+blinkstick --morph `cat /home/adrien/tmp/busylight` --duration=100
+
+sleep 20s
+blinkstick --morph --repeats 2 --pulse --duration=800 \#8F3F71
+blinkstick --morph `cat /home/adrien/tmp/busylight` --duration=100
+sleep 20s
+blinkstick --morph --repeats 2 --pulse --duration=800 \#8F3F71
+blinkstick --morph `cat /home/adrien/tmp/busylight` --duration=100
+sleep 20s
+blinkstick --morph --repeats 2 --pulse --duration=800 \#8F3F71
+blinkstick --morph `cat /home/adrien/tmp/busylight` --duration=100

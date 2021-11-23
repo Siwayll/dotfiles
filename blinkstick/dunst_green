@@ -1,0 +1,6 @@
+#!/bin/bash
+blinkstick --morph --repeats 2 --pulse --duration=200 dodgerblue
+blinkstick --morph `cat /home/adrien/tmp/busylight` --duration=200
+
+level CRITICAL
+

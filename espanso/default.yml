@@ -1,0 +1,51 @@
+# espanso configuration file
+
+# This is the default configuration file, change it as you like it
+# You can refer to the official documentation:
+# https://espanso.org/docs/
+
+# Matches are the substitution rules, when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  # Simple text replacement
+
+  # Mail
+  - trigger: ":mail"
+    replace: "adrien.imbert@bedrockstreaming.com"
+
+  # Conventional comments
+  - trigger: "_p"
+    replace: "__praise:__"
+
+  - trigger: "_n"
+    replace: "__nitpick:__"
+
+  - trigger: "_i"
+    replace: "__issue:__"
+
+  - trigger: "_q"
+    replace: "__question:__"
+
+  - trigger: "_t"
+    replace: "__thought:__"
+
+  - trigger: "_c"
+    replace: "__chore:__"
+
+  # Dates
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y-%m-%d"
+
+  # Shell commands
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo Hello from your shell"

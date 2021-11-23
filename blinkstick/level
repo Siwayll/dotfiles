@@ -1,0 +1,28 @@
+#!/bin/bash
+
+if [[ ${#} -lt 1 ]]; then
+    echo "LIGHT"
+    echo "NORMAL"
+    echo "CRITICAL"
+    echo "Away"
+    exit 0;
+fi
+
+case $1 in
+    L*)
+        echo "green" > /home/adrien/tmp/busylight
+    ;;
+    NORM*)
+        echo "d65d0e" > /home/adrien/tmp/busylight
+    ;;
+    CRIT*)
+        echo "red" > /home/adrien/tmp/busylight
+    ;;
+    A*)
+        echo "purple" > /home/adrien/tmp/busylight
+    ;;
+esac
+
+
+blinkstick --morph `cat /home/adrien/tmp/busylight` --duration=200
+

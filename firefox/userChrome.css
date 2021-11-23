@@ -155,8 +155,8 @@ input#urlbar-input {
 .tab-close-button,
 .tab-line,
 .tabbrowser-tab::before,
-.tabbrowser-tab::after,
-.tabbrowser-tab .tab-icon-image {
+.tabbrowser-tab::after/*,
+.tabbrowser-tab .tab-icon-image*/ {
 	display: none !important;
 }
 
