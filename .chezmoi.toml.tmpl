@@ -1,13 +1,19 @@
+{{/* vim: set filetype=toml: */}}
+
 {{- $name := "Siwaÿll" -}}
+{{- $email := promptStringOnce . "email" "What is your email address" -}}
 
 
 
-
+#████████▄     ▄████████     ███        ▄████████
+#███   ▀███   ███    ███ ▀█████████▄   ███    ███
+#███    ███   ███    ███    ▀███▀▀██   ███    ███
+#███    ███   ███    ███     ███   ▀   ███    ███
+#███    ███ ▀███████████     ███     ▀███████████
+#███    ███   ███    ███     ███       ███    ███
+#███   ▄███   ███    ███     ███       ███    ███
+#████████▀    ███    █▀     ▄████▀     ███    █▀ 
 [data]
-  email = ""
+  email = {{ $email | quote }}
+  certificatPath = ""
 
-
-[data.git]
-  name = {{ $name | quote }}
-  signinkey = ""
-  gpgsign = true

@@ -64,9 +64,7 @@
 [user]
   name = {{ .git.name }}
   email = {{ .email }}
-  {{ if .git.signinkey }}
-  signinkey = {{ .git.signinkey }}
-  {{ end }}
+  {{ if .git.signinkey }}signinkey = {{ .git.signinkey }}{{ end }}
 
 
 ;  ▄████████  ▄██████▄     ▄████████    ▄████████
@@ -88,3 +86,8 @@
 [commit]
   template = {{ .chezmoi.homeDir }}/.config/git/commit-template
   gpgsign = {{ .git.gpgsign }}
+
+{{- if ne .certificatPath "" }}
+[http]
+  sslcainfo = {{ .chezmoi.homeDir }}/{{ .certificatPath }}
+{{- end }}
